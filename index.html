@@ -107,24 +107,24 @@ section{
         <div class="row justify-content-center ">
           <div class="col-md-6">
             <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-              <strong>Terimakasihh!</strong> Pesan anda sudah kami terima.
+              <strong>Terimakasihh!</strong> Pesan anda sudah kami terima. <i class="bi bi-emoji-smile"></i>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           <form name="fikri-zumar-contact-form">
   <div class="mb-3">
     
     <label for="name" class="form-label">Nama Lengkap</label>
-    <input type="text" name="nama" class="form-control" id="name" aria-describedby="name">
+    <input type="text" name="nama" class="form-control" id="name" aria-describedby="name" required>
     
   </div>
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
-    <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
+    <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
     
   </div>
   <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
-  <textarea class="form-control" name="pesan" id="pesan" rows="3"></textarea>
+  <textarea class="form-control" name="pesan" id="pesan" rows="3" required></textarea>
 </div>
   <button type="submit" class="btn btn-success btn-kirim">Kirim</button>
   <button class="btn btn-primary btn-loading d-none" type="button" disabled>
@@ -155,7 +155,7 @@ section{
       form.addEventListener('submit', e => {
         e.preventDefault();
         // ketika tombol submit di klik
-        // tanpilkan tombol loading
+        // tampilkan tombol loading
 
         btnLoading.classList.toggle('d-none');
         btnKirim.classList.toggle('d-none');
@@ -170,6 +170,7 @@ section{
 
             // reset form setelah kirim
             form.reset();
+          
             console.log('Success!', response)})
           .catch(error => console.error('Error!', error.message))
       })
